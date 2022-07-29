@@ -3,15 +3,16 @@
   <TestComponent feature="X" />
 </template>
 
-<script>
+<script setup lang="ts">
 import TestComponent from './components/TestComponent.vue';
-
+import { useCounterStore } from './stores/useCounter'
+const counterStore = useCounterStore();
+const { counter, name } = counterStore;
 export default {
   name: 'App',
   components: {
-    TestComponent,
-  },
-};
+    TestComponent
+  }
 </script>
 
 <style>
